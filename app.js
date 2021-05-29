@@ -13,7 +13,7 @@ const corsOptions = {
   origin: [
     'https://lucid-hamilton-04c863.netlify.app',
     'https://lucid-hamilton-04c863.netlify.app/',
-    'http://localhost:3001',
+    'http://localhost:3006',
   ],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
   allowedHeaders: ['Content-Type', 'Authorization'],
