@@ -1,13 +1,13 @@
 const express = require('express')
-const morgan = require('morgan')
+// const morgan = require('morgan')
 
 const tourRoute = require('./routes/tourRoutes')
 
 const app = express()
 
-if (process.env.NODE_EVN === 'development') {
-  app.use(morgan('dev'))
-}
+// if (process.env.NODE_EVN === 'development') {
+//   app.use(morgan('dev'))
+// }
 
 app.use(express.json())
 app.use(express.static(`${__dirname}/public`))
