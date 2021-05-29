@@ -14,6 +14,10 @@ const tourSchema = new mongoose.Schema({
     type: Number,
     required: [true, 'A tour must have price'],
   },
+  isDelete: {
+    type: Boolean,
+    default: false,
+  },
 })
 
 module.exports = mongoose.model('Tour', tourSchema)
