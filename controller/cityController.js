@@ -17,8 +17,7 @@ exports.queryCity = async (req, res) => {
     })
   }
 }
-
-exports.apiQueryCity = async function apiQueryCity(query) {
+const apiQueryCity = async (query) => {
   const { data = [] } = await api.apiWeather.get('/api/location/search', {
     params: { query },
   })
@@ -27,3 +26,5 @@ exports.apiQueryCity = async function apiQueryCity(query) {
   }
   return data
 }
+
+exports.apiQueryCity = apiQueryCity
