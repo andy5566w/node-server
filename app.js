@@ -2,6 +2,7 @@ const express = require('express')
 
 const tourRoute = require('./routes/tourRoutes')
 const cityRoute = require('./routes/cityRoutes')
+const weatherRoute = require('./routes/weaherRoute')
 
 const app = express()
 
@@ -15,5 +16,6 @@ app.use((req, res, next) => {
 
 app.use('/api/v1/tours', tourRoute)
 app.use('/api/v1/city', cityRoute)
+app.use('/api/v1/weather', weatherRoute)
 
 module.exports = app
