@@ -1,13 +1,10 @@
 const express = require('express')
-const morgan = require('morgan')
 
 const tourRoute = require('./routes/tourRoutes')
+const cityRoute = require('./routes/cityRoutes')
+const weatherRoute = require('./routes/weaherRoute')
 
 const app = express()
-
-if (process.env.NODE_EVN === 'development') {
-  app.use(morgan('dev'))
-}
 
 app.use(express.json())
 app.use(express.static(`${__dirname}/public`))
@@ -18,5 +15,7 @@ app.use((req, res, next) => {
 })
 
 app.use('/api/v1/tours', tourRoute)
+app.use('/api/v1/city', cityRoute)
+app.use('/api/v1/weather', weatherRoute)
 
 module.exports = app
