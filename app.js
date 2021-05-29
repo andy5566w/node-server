@@ -9,16 +9,16 @@ const app = express()
 app.use(express.json())
 app.use(express.static(`${__dirname}/public`))
 
-const corsOptions = {
-  origin: [
-    'https://lucid-hamilton-04c863.netlify.app',
-    'https://lucid-hamilton-04c863.netlify.app/',
-    'http://localhost:3006',
-  ],
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-  allowedHeaders: ['Content-Type', 'Authorization'],
-}
-app.use(cors(corsOptions))
+// const corsOptions = {
+//   origin: [
+//     'https://lucid-hamilton-04c863.netlify.app',
+//     'https://lucid-hamilton-04c863.netlify.app/',
+//     'http://localhost:3006',
+//   ],
+//   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+//   allowedHeaders: ['Content-Type', 'Authorization'],
+// }
+app.use(cors())
 
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString()
