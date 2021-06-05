@@ -1,5 +1,6 @@
 const City = require('../models/cityModel')
 const api = require('../api/index')
+const { handleError } = require('../utils/apiError')
 
 exports.queryCity = async (req, res) => {
   try {
@@ -11,10 +12,7 @@ exports.queryCity = async (req, res) => {
     }
     res.status(200).json({ status: 'success', cities })
   } catch (err) {
-    res.status(404).json({
-      status: 'fail',
-      message: `😱${err}`,
-    })
+    handleError(err, res)
   }
 }
 const apiQueryCity = async (query) => {

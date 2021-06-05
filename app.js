@@ -4,6 +4,7 @@ const cors = require('cors')
 const tourRoute = require('./routes/tourRoutes')
 const cityRoute = require('./routes/cityRoutes')
 const weatherRoute = require('./routes/weaherRoute')
+const userRoute = require('./routes/userRoutes')
 
 const app = express()
 app.use(express.json())
@@ -27,5 +28,6 @@ app.use((req, res, next) => {
 app.use('/api/v1/tours', tourRoute)
 app.use('/api/v1/city', cityRoute)
 app.use('/api/v1/weather', weatherRoute)
+app.use('/api/v1/user', userRoute)
 
 module.exports = app

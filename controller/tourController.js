@@ -1,4 +1,5 @@
 const Tour = require('../models/tourModel')
+const { handleError } = require('../utils/apiError')
 
 exports.getAllTours = async (req, res) => {
   try {
@@ -9,10 +10,7 @@ exports.getAllTours = async (req, res) => {
       data: { tours },
     })
   } catch (err) {
-    res.status(404).json({
-      status: 'fail',
-      message: `😱${err}`,
-    })
+    handleError(err, res)
   }
 }
 
@@ -24,10 +22,7 @@ exports.getTourById = async (req, res) => {
       data: { tour },
     })
   } catch (err) {
-    res.status(404).json({
-      status: 'fail',
-      message: `😱${err}`,
-    })
+    handleError(err, res)
   }
 }
 
@@ -39,10 +34,7 @@ exports.createTour = async (req, res) => {
       data: { newTour },
     })
   } catch (err) {
-    res.status(400).json({
-      status: 'fail',
-      message: `😱${err}`,
-    })
+    handleError(err, res)
   }
 }
 
@@ -57,10 +49,7 @@ exports.updateTour = async (req, res) => {
       data: { tour },
     })
   } catch (err) {
-    res.status(400).json({
-      status: 'fail',
-      message: `😱${err}`,
-    })
+    handleError(err, res)
   }
 }
 
@@ -77,9 +66,6 @@ exports.deleteTour = async (req, res) => {
       data: { newTour },
     })
   } catch (err) {
-    res.status(400).json({
-      status: 'fail',
-      message: `😱${err}`,
-    })
+    handleError(err, res)
   }
 }
